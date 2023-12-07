@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.con {
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./Assets/Image/html-system-website-concept.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    color: #64CCC5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.typewriter {
+    overflow: hidden;
+    /* Hide overflowing text */
+    white-space: nowrap;
+    /* Keep the text in one line */
+    border-right: 0.18em solid #DAFFFB;
+    /* Add a border for the cursor effect */
+    font-size: 2em;
+
+    animation: typing 4s steps(44, end) infinite alternate, blink-caret 0.80s step-end infinite alternate;
+    /* Set iteration count to infinite and direction to alternate */
+}
+
+/* Typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor animation */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #DAFFFB;
+    }
+}
+
+
+.con2 {
+    width: 100%;
+    padding: 50px 0px;
+    background-color: #64CCC5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #DAFFFB;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.paragraph {
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+.con3 {
+    width: 100%;
+    padding: 50px 0px;
+    background-color: #04364A;
+    color: #DAFFFB;
+
+}
