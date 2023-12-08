@@ -5,19 +5,12 @@ import Home from './Home';
 import About from './About';
 import Project from './Project';
 import Skill from './Skill';
+import Routercontainer from './Routercontainer';
 function App() {
   return (
     <>
 
-      {/* Home  */}
-      <Home />
-      {/* About  */}
-      <About />
-      {/* Skill  */}
-      <Skill />
-      {/* Project  */}
-      <Project />
-      {/* Contact  */}
+      <Routercontainer />
     </>
   );
 }
