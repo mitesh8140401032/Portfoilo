@@ -8,7 +8,7 @@ export default function Home() {
             <Header />
             <div className='con overflow-hidden' id='home'>
                 <div className="main text-center">
-                    <h2 class="animate__animated animate__fadeInDown">I'am Mitesh Akbari<br /> </h2>
+                    <h2 className="animate__animated animate__fadeInDown">I'am Mitesh Akbari<br /> </h2>
                     <h1 className="typewriter">Full-stack Devloper</h1>
 
                 </div>

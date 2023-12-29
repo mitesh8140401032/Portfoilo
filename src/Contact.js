@@ -2,7 +2,10 @@ import React, { useEffect } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+<<<<<<< HEAD
 import firebase from './firebase'
+=======
+>>>>>>> 1ea700c9e91d930a439a0299e513da7ee7e87539
 import { faGithub, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -25,6 +28,7 @@ export default function Contact() {
     email: '',
     message: '',
   };
+<<<<<<< HEAD
   const makeid = (length) => {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -54,6 +58,26 @@ export default function Contact() {
       .catch((error) => {
         console.log("Error adding document: ", error);
       });
+=======
+  const generateRandomString = (length) => {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      result += characters.charAt(randomIndex);
+    }
+    return result;
+  }
+
+  const onSubmit = (values, { resetForm }) => {
+    values.ant = Date.now()
+    values.id = generateRandomString(8)
+
+    console.log(values);
+   
+    toast.success("Successfully send Message")
+    resetForm();
+>>>>>>> 1ea700c9e91d930a439a0299e513da7ee7e87539
   };
   return (
     <div className="con3 overflow-hidden" id='contact'>

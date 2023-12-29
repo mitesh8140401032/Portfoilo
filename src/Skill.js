@@ -7,7 +7,10 @@ import node from './Assets/Image/node-js.png'
 import express from './Assets/Image/images-removebg-preview (1).png'
 import mongodb from './Assets/Image/mongodb__1_-removebg-preview (2).png'
 import firebase from './Assets/Image/1611674-removebg-preview.png'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1ea700c9e91d930a439a0299e513da7ee7e87539
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
