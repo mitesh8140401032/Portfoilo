@@ -7,7 +7,7 @@ import node from './Assets/Image/node-js.png'
 import express from './Assets/Image/images-removebg-preview (1).png'
 import mongodb from './Assets/Image/mongodb__1_-removebg-preview (2).png'
 import firebase from './Assets/Image/1611674-removebg-preview.png'
-import { Link } from 'react-router-dom'
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

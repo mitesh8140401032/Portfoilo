@@ -2,8 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import logo from './Assets/Image/Akbari-1__1___1___1_-removebg-preview.png'
 export default function Header() {
     return (
         <div style={{ position: "fixed", width: "100%", zIndex: "999999" }}>
@@ -13,7 +12,7 @@ export default function Header() {
                 <Container>
                     <Navbar.Brand >
                         <a className='nav' href="#home">
-                            AM
+                            <img src={logo} alt="" height={40} />
                         </a>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

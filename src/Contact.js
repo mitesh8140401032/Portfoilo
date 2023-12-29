@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faGithub, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import firebase from './firebase'
+import { faGithub, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 export default function Contact() {
   useEffect(() => {
-    AOS.init({ duration: 1500 }); // Initialize AOS with desired options
+    AOS.init({ duration: 1500 });
   }, []);
   const validationSchema = Yup.object({
     name: Yup.string().required('Name is required'),
@@ -24,14 +25,35 @@ export default function Contact() {
     email: '',
     message: '',
   };
+  const makeid = (length) => {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+  }
 
-  // Handle form submission
+
+
   const onSubmit = (values, { resetForm }) => {
-    // Handle form submission logic here
-    console.log(values);
-    toast.success("Successfully send Message")
-    // Optionally reset the form after submission
-    resetForm();
+    values.tnd = Date.now()
+    values.id = makeid(8)
+
+
+    let db = firebase.firestore();
+    db.collection("contact").add(values)
+      .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+        toast.success("Form submitted successfully. Thank you!")
+        resetForm();
+      })
+      .catch((error) => {
+        console.log("Error adding document: ", error);
+      });
   };
   return (
     <div className="con3 overflow-hidden" id='contact'>
