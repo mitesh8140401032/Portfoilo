@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faGithub, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -24,13 +24,23 @@ export default function Contact() {
     email: '',
     message: '',
   };
+  const generateRandomString = (length) => {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      result += characters.charAt(randomIndex);
+    }
+    return result;
+  }
 
-  // Handle form submission
   const onSubmit = (values, { resetForm }) => {
-    // Handle form submission logic here
+    values.ant = Date.now()
+    values.id = generateRandomString(8)
+
     console.log(values);
+   
     toast.success("Successfully send Message")
-    // Optionally reset the form after submission
     resetForm();
   };
   return (

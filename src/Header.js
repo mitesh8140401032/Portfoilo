@@ -2,11 +2,9 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
 export default function Header() {
     return (
-        <div style={{ position: "fixed", width: "100%", zIndex: "999999" }}>
+        <div style={{ position: "fixed", width: "100%", zIndex: "999999999" }}>
 
             <Navbar expand="lg" className="bg-body-tertiary">
 
