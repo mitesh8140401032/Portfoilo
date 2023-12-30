@@ -4,9 +4,10 @@ import Home from './Home'
 import About from './About'
 import Project from './Project'
 import Contact from './Contact'
+import ContactUs from './ContactUs'
 export default function MainLayout() {
     return (
-        <>
+        <div>
             {/* Home  */}
             < Home />
             {/* About  */}
@@ -15,8 +16,9 @@ export default function MainLayout() {
             < Skill />
             {/* Project  */}
             < Project />
-            {/* Contact  */}
-            <Contact />
-        </>
+            {/** Contact US */}
+            < ContactUs />
+
+        </div>
     )
 }
